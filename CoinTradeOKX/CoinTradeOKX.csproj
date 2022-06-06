@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF49D2E1-A368-4FD9-A896-7F2177523FED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CoinTradeOKX</RootNamespace>
+    <AssemblyName>CoinTradeOKX</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>3.0.7.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OKEX_API_V5</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>42999B8B02AEFFE68CE2100CD72FD7A1395840F3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CoinTradeGecko_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OKEX_API_V5</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bit_trader.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.112.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="ConfigCrypto.cs" />
+    <Compile Include="Control\DepthItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepthItem.Designer.cs">
+      <DependentUpon>DepthItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DepthView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepthView.Designer.cs">
+      <DependentUpon>DepthView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\IMarketView.cs" />
+    <Compile Include="Control\C2CMarketView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\C2CMarketView.Designer.cs">
+      <DependentUpon>C2CMarketView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ReceiptAccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ReceiptAccountView.Designer.cs">
+      <DependentUpon>ReceiptAccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OrderDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OrderDetailView.Designer.cs">
+      <DependentUpon>OrderDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TickView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TickView.Designer.cs">
+      <DependentUpon>TickView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TransferView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TransferView.Designer.cs">
+      <DependentUpon>TransferView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SqlDao.cs" />
+    <Compile Include="Enum\Enums.cs" />
+    <Compile Include="Event\EventNames.cs" />
+    <Compile Include="Manager\AccountManager.cs" />
+    <Compile Include="Manager\AssetsManager.cs" />
+    <Compile Include="Manager\OTCCashManager.cs" />
+    <Compile Include="Manager\OTCContractManager.cs" />
+    <Compile Include="Control\ContractList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ContractList.Designer.cs">
+      <DependentUpon>ContractList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ContractView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ContractView.Designer.cs">
+      <DependentUpon>ContractView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MonitorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MonitorView.Designer.cs">
+      <DependentUpon>MonitorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ParamView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ParamView.Designer.cs">
+      <DependentUpon>ParamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BehaviorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\BehaviorView.Designer.cs">
+      <DependentUpon>BehaviorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MarketView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MarketView.Designer.cs">
+      <DependentUpon>MarketView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\WinQrCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\WinQrCode.Designer.cs">
+      <DependentUpon>WinQrCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoke\OTCInvoke.cs" />
+    <Compile Include="Manager\CTCHistoryManager.cs" />
+    <Compile Include="Manager\CTCOrderManager.cs" />
+    <Compile Include="Manager\OTCHistoryManager.cs" />
+    <Compile Include="Manager\OTCPaymentManager.cs" />
+    <Compile Include="Manager\OTCReceiptAccountManager.cs" />
+    <Compile Include="Manager\OTCTeamManager.cs" />
+    <Compile Include="Monitor\CurrencyMarket.cs" />
+    <Compile Include="Monitor\IMonitor.cs" />
+    <Compile Include="Monitor\MonitorNameAttribute.cs" />
+    <Compile Include="Okex\ACTWalletMonitor.cs" />
+    <Compile Include="Okex\API\Okex_otc_api_url.cs" />
+    <Compile Include="Okex\API\Okex_rest_api_v5.cs" />
+    <Compile Include="Okex\AssetsRESTMonitor.cs" />
+    <Compile Include="Okex\Behavior\CTCArbitrageBehavior.cs" />
+    <Compile Include="Okex\Behavior\CTCBuyBehavior.cs" />
+    <Compile Include="Okex\Behavior\CTCMakerBuyBehavior.cs" />
+    <Compile Include="Okex\Behavior\CTCMarketMaker.cs" />
+    <Compile Include="Okex\Behavior\CTCMakerSellBehavior.cs" />
+    <Compile Include="Okex\Behavior\CTCTradingBehavior.cs" />
+    <Compile Include="Okex\Behavior\OTCAccountBehavior.cs" />
+    <Compile Include="Okex\Behavior\CTCSellBehavior.cs" />
+    <Compile Include="Okex\Behavior\SpotBehaviorBase.cs" />
+    <Compile Include="Okex\Const.cs" />
+    <Compile Include="Okex\CTCCandleMonitor.cs" />
+    <Compile Include="Okex\CTCDepthRESTProvider.cs" />
+    <Compile Include="Okex\CTCMyOrderMonitor.cs" />
+    <Compile Include="Okex\CTCWalletRESTMonitor.cs" />
+    <Compile Include="Okex\Entity\Account.cs" />
+    <Compile Include="Okex\Entity\OTCAccount.cs" />
+    <Compile Include="Okex\Entity\CTCOrder.cs" />
+    <Compile Include="Okex\Entity\HistoryOrder.cs" />
+    <Compile Include="Okex\Entity\Instrument.cs" />
+    <Compile Include="Okex\Entity\InstrumentTableVsUSDT.cs" />
+    <Compile Include="Okex\Entity\OrderBase.cs" />
+    <Compile Include="Okex\Entity\OTCContract.cs" />
+    <Compile Include="Okex\Entity\Platform.cs" />
+    <Compile Include="Okex\Entity\ReceiptAccount.cs" />
+    <Compile Include="Okex\Entity\ApiKey.cs" />
+    <Compile Include="Okex\Entity\ReceiptAccountSetting.cs" />
+    <Compile Include="Okex\Entity\TeamMember.cs" />
+    <Compile Include="Okex\Entity\UserVo.cs" />
+    <Compile Include="Okex\IWalletMonitor.cs" />
+    <Compile Include="Okex\OCTWalletMonitor.cs" />
+    <Compile Include="Okex\ReceiptAccountMonitor.cs" />
+    <Compile Include="Okex\TimeMonitor.cs" />
+    <Compile Include="Okex\OTCContractMonitor.cs" />
+    <Compile Include="Okex\OTCMarketMonitor.cs" />
+    <Compile Include="Okex\OTCMyOrderMonitor.cs" />
+    <Compile Include="Okex\CTCTickerMonitor.cs" />
+    <Compile Include="Okex\Crypt.cs" />
+    <Compile Include="Okex\API\Okex_rest_api.cs" />
+    <Compile Include="Control\OrderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Okex\Behavior\StoreControlBehavior.cs" />
+    <Compile Include="Okex\Behavior\StoreBehavior.cs" />
+    <Compile Include="Okex\Behavior\BehaviorBase.cs" />
+    <Compile Include="Okex\Behavior\BehaviorConfig.cs" />
+    <Compile Include="Okex\OkexHttp.cs" />
+    <Compile Include="Manager\OTCOrderManager.cs" />
+    <Compile Include="WinAccountSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinAccountSetting.Designer.cs">
+      <DependentUpon>WinAccountSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinBuyUSDX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinBuyUSDX.Designer.cs">
+      <DependentUpon>WinBuyUSDX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinCTCConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinCTCConfig.Designer.cs">
+      <DependentUpon>WinCTCConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinContract.Designer.cs">
+      <DependentUpon>WinContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinCTCStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinCTCStat.Designer.cs">
+      <DependentUpon>WinCTCStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowManager.cs" />
+    <Compile Include="WinHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinHistory.Designer.cs">
+      <DependentUpon>WinHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinMessage.Designer.cs">
+      <DependentUpon>WinMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinPassword.Designer.cs">
+      <DependentUpon>WinPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinReceiptAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinReceiptAccount.Designer.cs">
+      <DependentUpon>WinReceiptAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinStartup.Designer.cs">
+      <DependentUpon>WinStartup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinMain.Designer.cs">
+      <DependentUpon>WinMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Okex\Entity\CoinInfo.cs" />
+    <Compile Include="Okex\Entity\Order.cs" />
+    <Compile Include="Okex\Entity\Trader.cs" />
+    <Compile Include="Monitor\MonitorBase.cs" />
+    <Compile Include="Manager\MonitorManager.cs" />
+    <Compile Include="Okex\API\Okex_otc_api.cs" />
+    <Compile Include="Okex\Enum.cs" />
+    <Compile Include="Okex\API\Okex_V3_API.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinConfig.Designer.cs">
+      <DependentUpon>WinConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinMarket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinMarket.Designer.cs">
+      <DependentUpon>WinMarket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinTeam.Designer.cs">
+      <DependentUpon>WinTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinTimeLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinTimeLine.Designer.cs">
+      <DependentUpon>WinTimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinRoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinRoot.Designer.cs">
+      <DependentUpon>WinRoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinBehaviorParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinBehaviorParam.Designer.cs">
+      <DependentUpon>WinBehaviorParam.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control\ContractList.resx">
+      <DependentUpon>ContractList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ContractView.resx">
+      <DependentUpon>ContractView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepthItem.resx">
+      <DependentUpon>DepthItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepthView.resx">
+      <DependentUpon>DepthView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\C2CMarketView.resx">
+      <DependentUpon>C2CMarketView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ReceiptAccountView.resx">
+      <DependentUpon>ReceiptAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MonitorView.resx">
+      <DependentUpon>MonitorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\OrderDetailView.resx">
+      <DependentUpon>OrderDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ParamView.resx">
+      <DependentUpon>ParamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\BehaviorView.resx">
+      <DependentUpon>BehaviorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MarketView.resx">
+      <DependentUpon>MarketView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TickView.resx">
+      <DependentUpon>TickView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TransferView.resx">
+      <DependentUpon>TransferView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\WinQrCode.resx">
+      <DependentUpon>WinQrCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinAccountSetting.resx">
+      <DependentUpon>WinAccountSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinBuyUSDX.resx">
+      <DependentUpon>WinBuyUSDX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinCTCConfig.resx">
+      <DependentUpon>WinCTCConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinContract.resx">
+      <DependentUpon>WinContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinCTCStat.resx">
+      <DependentUpon>WinCTCStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinHistory.resx">
+      <DependentUpon>WinHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinMessage.resx">
+      <DependentUpon>WinMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinPassword.resx">
+      <DependentUpon>WinPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinReceiptAccount.resx">
+      <DependentUpon>WinReceiptAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinStartup.resx">
+      <DependentUpon>WinStartup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinMain.resx">
+      <DependentUpon>WinMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WinConfig.resx">
+      <DependentUpon>WinConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinMarket.resx">
+      <DependentUpon>WinMarket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinTeam.resx">
+      <DependentUpon>WinTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinTimeLine.resx">
+      <DependentUpon>WinTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinRoot.resx">
+      <DependentUpon>WinRoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinBehaviorParam.resx">
+      <DependentUpon>WinBehaviorParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="CoinTradeGecko_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="platform.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bit_trader.ico" />
+    <Content Include="Sounds\new_order.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{a2f3930d-27a3-43ed-8f0b-e73142db0c0a}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Okex\Monitor\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
