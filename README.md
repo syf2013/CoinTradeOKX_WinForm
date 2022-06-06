@@ -1,5 +1,6 @@
 # CoinTradeOKX_WinForm
 OKX现货资产管理 WinForm程序，量化服务器挂机程序 
+运行环境 .Net Framework 4.8
 VX: wenquan836 
 
 ![1654529144(1)](https://user-images.githubusercontent.com/3815703/172192411-69a9dd20-9b39-4393-909f-bc96cb81be86.png)
