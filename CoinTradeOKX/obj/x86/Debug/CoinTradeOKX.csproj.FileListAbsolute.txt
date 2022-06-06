@@ -1,2 +1,0 @@
-G:\Okex_OTC\trunk\CoinTradeGecko\CoinTradeGecko\obj\x86\Debug\CoinTradeOKEx.exe
-G:\Okex_OTC\trunk\CoinTradeGecko\CoinTradeGecko\obj\x86\Debug\CoinTradeOKEx.pdb
