@@ -36,20 +36,6 @@ namespace CoinTradeOKX.Manager
         Dictionary<long, AmountTimes> ReceiptCount = new Dictionary<long, AmountTimes>(); //收款统计
         Dictionary<long, ReceiptAccountSetting> Settings = new Dictionary<long, ReceiptAccountSetting>();
 
-        /*
-         accountName: "林锦燕"
-        accountNo: "6216611700003219195"
-        accountQrCodeUrl: ""
-        applyType: 2
-        bankBranchName: ""
-        bankCode: ""
-        bankName: "中国银行"
-        currency: "CNY"
-        disabled: true
-        id: 909741
-        type: "BANK" 
-         */
-
         OTCReceiptAccountManager()
         {
             this.monitor = new ReceiptAccountMonitor();
